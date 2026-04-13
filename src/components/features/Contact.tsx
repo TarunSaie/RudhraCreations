@@ -8,9 +8,9 @@ import { Send, MessageCircle, CheckCircle, Mail, MapPin, AlertCircle } from "luc
 import { COMPANY_INFO } from "@/constants/data";
 import type { ContactFormData } from "@/types";
 
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+const EMAILJS_SERVICE_ID = (import.meta.env.VITE_EMAILJS_SERVICE_ID || "") as string;
+const EMAILJS_TEMPLATE_ID = (import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "") as string;
+const EMAILJS_PUBLIC_KEY = (import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "") as string;
 
 const schema = z.object({
   fullName: z.string().min(2, "Please enter your full name"),
@@ -31,36 +31,59 @@ export default function Contact() {
     handleSubmit,
     formState: { errors },
     reset,
+    getValues,
   } = useForm<ContactFormData>({
     resolver: zodResolver(schema),
   });
 
+  const generateMailtoLink = (data: ContactFormData) => {
+    const subject = encodeURIComponent(`Contact Inquiry from ${data.fullName}`);
+    const body = encodeURIComponent(
+      `Name: ${data.fullName}\n` +
+      `Email: ${data.email}\n` +
+      `Phone: ${data.phone || "Not provided"}\n\n` +
+      `Message:\n${data.message}`
+    );
+    return `mailto:${COMPANY_INFO.email}?subject=${subject}&body=${body}`;
+  };
+
   const onSubmit = async (data: ContactFormData) => {
     setSubmitting(true);
     setEmailError(null);
-    console.log("Form submitted:", data);
+    // console.log("Form submitted:", data);
 
     // 1) Send email via EmailJS
-    const templateParams = {
-      from_name: data.fullName,
-      from_email: data.email,
-      phone: data.phone || "Not provided",
-      message: data.message,
-      to_email: COMPANY_INFO.email,
-      reply_to: data.email,
-    };
+    if (!EMAILJS_PUBLIC_KEY || EMAILJS_PUBLIC_KEY.includes("your_public_key_here")) {
+      setEmailError("EmailJS is not fully configured (Public Key missing). Please use 'Send via Email App' or WhatsApp.");
+      setSubmitting(false);
+      return;
+    }
 
-    const emailResult = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      templateParams,
-      EMAILJS_PUBLIC_KEY
-    );
+    try {
+      const templateParams = {
+        from_name: data.fullName,
+        from_email: data.email,
+        phone: data.phone || "Not provided",
+        message: data.message,
+        to_email: COMPANY_INFO.email,
+        reply_to: data.email,
+      };
 
-    console.log("EmailJS result:", emailResult);
+      const emailResult = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
 
-    if (emailResult.status !== 200) {
-      setEmailError("Email delivery failed. Please try WhatsApp instead.");
+      // console.log("EmailJS result:", emailResult);
+
+      if (emailResult.status !== 200) {
+        throw new Error("Delivery failed");
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setEmailError("Instant email delivery failed. Please use 'Send via Email App' or WhatsApp instead.");
       setSubmitting(false);
       return;
     }
@@ -318,18 +341,30 @@ export default function Contact() {
                     </button>
 
                     <a
+                      href={generateMailtoLink(getValues())}
+                      onMouseEnter={(e) => {
+                        // Update the link just before the user clicks/hovers
+                        (e.currentTarget as HTMLAnchorElement).href = generateMailtoLink(getValues());
+                      }}
+                      className="flex items-center justify-center gap-3 px-6 py-4 border border-gold-500/40 text-gold-500 hover:bg-gold-500/10 transition-all duration-300 font-inter text-sm tracking-wide"
+                    >
+                      <Mail size={16} />
+                      Send via Email App
+                    </a>
+
+                    <a
                       href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Rudhra%20Creations`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 px-6 py-4 border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 font-inter text-sm tracking-wide"
+                      className="flex items-center justify-center gap-3 px-6 py-4 border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 font-inter text-sm tracking-wide flex-1"
                     >
                       <MessageCircle size={16} />
                       WhatsApp
                     </a>
                   </div>
 
-                  <p className="font-inter text-[11px] text-cinema-text-muted text-center">
-                    Your message will be emailed to us and WhatsApp will open for instant connection.
+                  <p className="font-inter text-[11px] text-cinema-text-muted text-center leading-relaxed">
+                    If instant submission fails, use <strong>Send via Email App</strong> or <strong>WhatsApp</strong>.
                   </p>
                 </form>
               )}
