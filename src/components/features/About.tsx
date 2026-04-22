@@ -67,7 +67,7 @@ export default function About() {
               <div className="relative z-10 overflow-hidden">
                 <img
                   src={founderImg}
-                  alt="Deepak — Founder of Rudra Creations"
+                  alt="T Gautam Leela Varma — Founder of Rudra Creations"
                   className="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -79,9 +79,9 @@ export default function About() {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="h-px w-12 mb-3"
                     style={{ background: "linear-gradient(90deg,#00D4E8,#D4AF37)" }} />
-                  <p className="font-cinzel text-white text-xl font-bold">Deepak</p>
+                  <p className="font-cinzel text-white text-xl font-bold">T Gautam Leela Varma</p>
                   <p className="font-inter text-rudra-400 text-xs tracking-widest uppercase">
-                    Founder & Director
+                    Founder & Producer
                   </p>
                 </div>
               </div>
@@ -101,10 +101,10 @@ export default function About() {
                 <span className="text-rudra-400 italic">Passion</span> for Cinema
               </h3>
               <p className="font-inter text-cinema-text-muted text-base leading-[1.9] mb-5">
-                Founded by <strong className="text-white">Deepak</strong> in 2018,{" "}
+                Founded by <strong className="text-white">T Gautam Leela Varma</strong> in 2018,{" "}
                 <strong className="text-gold-500">Rudra Creations</strong> emerged from a dream — to
-                tell Telugu stories with the grandeur they deserve. Based in the vibrant city of
-                Hyderabad at <span className="text-rudra-400">Nanakramguda</span>, we have grown from
+                tell Telugu stories with the grandeur they deserve. Known for producing the acclaimed Telugu film <em className="text-rudra-400">Kali</em>, Gautam and his team are based in the vibrant city of
+                Hyderabad at <span className="text-rudra-400">Manikonda</span>, and have grown from
                 a passionate team of filmmakers into one of Tollywood's most promising production
                 houses.
               </p>

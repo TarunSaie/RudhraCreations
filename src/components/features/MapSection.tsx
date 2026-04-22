@@ -62,7 +62,7 @@ export default function MapSection() {
 
             <iframe
               src={COMPANY_INFO.mapEmbedUrl}
-              title="Rudra Creations Location — Nanakramguda, Hyderabad"
+              title="Rudra Creations Location — Manikonda, Hyderabad"
               width="100%"
               height="420"
               style={{ border: 0 }}
@@ -76,7 +76,7 @@ export default function MapSection() {
           {/* Get Directions */}
           <div className="flex justify-end mt-4">
             <a
-              href="https://maps.google.com/?q=Nanakramguda,Hyderabad,Telangana,India"
+              href="https://maps.google.com/?q=Manikonda,Hyderabad,Telangana,India"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-inter text-sm transition-colors group px-5 py-2.5"
