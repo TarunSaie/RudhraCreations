@@ -7,7 +7,7 @@ export const COMPANY_INFO = {
   location: "Manikonda, Hyderabad, Telangana, India",
   whatsapp: "+91 7995177703",
   phone: "+91 7995177703",
-  email: "manachiralainfo@gmail.com",
+  email: "rudracreations09@gmail.com",
   instagram: "https://www.instagram.com/varma_gowtham/",
   youtube: "https://youtube.com/@rudhracreations",
   founded: "2018",

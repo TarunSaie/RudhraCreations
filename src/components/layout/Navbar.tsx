@@ -87,12 +87,19 @@ export default function Navbar() {
             onClick={() => handleNavClick("#hero")}
             className="flex items-center gap-3 group active:scale-95 transition-transform"
           >
-            <img
+            {/* <img
               src={logo}
               alt="Rudra Creations Logo"
-              className={`object-contain transition-all duration-500 ${scrolled ? "h-12 w-12" : "h-16 w-16 hidden"
+              className={`object-contain transition-all duration-500 block ${scrolled ? "h-12 w-12 block" : "h-16 w-16 sm:hidden md:block"
                 } drop-shadow-[0_0_8px_rgba(0,212,232,0.3)]`}
-            />
+            /> */}
+            <img
+  src={logo}
+  alt="Rudra Creations Logo"
+  className={`object-contain block shrink-0 transition-all duration-500 ${
+    scrolled ? "h-10 w-10 md:h-12 md:w-12" : "h-14 w-14 md:h-16 md:w-16"
+  } drop-shadow-[0_0_8px_rgba(0,212,232,0.3)]`}
+/>
             <div className="hidden sm:block text-left sm:hidden lg:block">
               <span className="font-cinzel font-bold text-white text-[15px] tracking-widest block leading-none">
                 RUDRA
