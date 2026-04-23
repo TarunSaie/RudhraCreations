@@ -16,29 +16,38 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  // Prevent multiple active tabs: ensure only one is active at a time
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
-
       const sections = NAV_LINKS.map((link) => link.href.substring(1));
-      let found = false;
+      let foundSection = "";
+      
+      // Find the section closest to the top of the viewport
+      let closestDistance = Infinity;
+      
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const el = document.getElementById(section);
         if (el) {
-          const offsetTop = el.offsetTop - 120;
-          const offsetBottom = offsetTop + el.offsetHeight;
-          if (window.scrollY >= offsetTop && window.scrollY < offsetBottom) {
-            setActiveSection(section);
-            found = true;
-            break;
+          const rect = el.getBoundingClientRect();
+          const offsetTop = rect.top + window.scrollY - 120;
+          
+          // Check if section is in view (within viewport)
+          if (rect.top <= 150 && rect.bottom > 150) {
+            const distance = Math.abs(rect.top - 120);
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              foundSection = section;
+            }
           }
         }
       }
-      // If not found (e.g., scrolled past last section), set last section as active
-      if (!found) {
-        setActiveSection(sections[sections.length - 1]);
+      
+      // Only update if we found a visible section
+      if (foundSection) {
+        setActiveSection(foundSection);
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -54,7 +63,6 @@ export default function Navbar() {
       const offset = 80;
       const elementPosition = el.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
-
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
@@ -79,12 +87,19 @@ export default function Navbar() {
             onClick={() => handleNavClick("#hero")}
             className="flex items-center gap-3 group active:scale-95 transition-transform"
           >
-            <img
+            {/* <img
               src={logo}
               alt="Rudra Creations Logo"
-              className={`object-contain transition-all duration-500 ${scrolled ? "h-12 w-12" : "h-16 w-16 hidden"
+              className={`object-contain transition-all duration-500 block ${scrolled ? "h-12 w-12 block" : "h-16 w-16 sm:hidden md:block"
                 } drop-shadow-[0_0_8px_rgba(0,212,232,0.3)]`}
-            />
+            /> */}
+            <img
+  src={logo}
+  alt="Rudra Creations Logo"
+  className={`object-contain block shrink-0 transition-all duration-500 ${
+    scrolled ? "h-10 w-10 md:h-12 md:w-12" : "h-14 w-14 md:h-16 md:w-16"
+  } drop-shadow-[0_0_8px_rgba(0,212,232,0.3)]`}
+/>
             <div className="hidden sm:block text-left sm:hidden lg:block">
               <span className="font-cinzel font-bold text-white text-[15px] tracking-widest block leading-none">
                 RUDRA
