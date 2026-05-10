@@ -197,7 +197,7 @@ export default function Contact() {
             <div className="bg-cinema-gray/30 border border-white/5 p-8 md:p-12 shadow-2xl relative overflow-hidden group">
               {/* Subtle top gradient */}
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-rudra-500/50 to-transparent" />
-              
+
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -233,10 +233,10 @@ export default function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="md:col-span-2">
-                       <label className="font-inter text-[11px] tracking-[0.2em] text-white/60 uppercase font-bold block mb-3">
+                      <label className="font-inter text-[11px] tracking-[0.2em] text-white/60 uppercase font-bold block mb-3">
                         Full Name <span className="text-rudra-500">*</span>
                       </label>
-                      <input {...register("fullName")} placeholder="T Gautam Leela Varma" className={inputClass} />
+                      <input {...register("fullName")} placeholder="T Gowtham Leela Varma" className={inputClass} />
                       {errors.fullName && (
                         <p className="font-inter text-red-500 text-[11px] mt-2 font-medium tracking-wide uppercase">{errors.fullName.message}</p>
                       )}
@@ -246,7 +246,7 @@ export default function Contact() {
                       <label className="font-inter text-[11px] tracking-[0.2em] text-white/60 uppercase font-bold block mb-3">
                         Email Address <span className="text-rudra-500">*</span>
                       </label>
-                      <input {...register("email")} type="email" placeholder="official@rudra.com" className={inputClass} />
+                      <input {...register("email")} type="email" placeholder="rudracreations09@gmail.com" className={inputClass} />
                       {errors.email && (
                         <p className="font-inter text-red-500 text-[11px] mt-2 font-medium tracking-wide uppercase">{errors.email.message}</p>
                       )}
@@ -295,7 +295,7 @@ export default function Contact() {
                     </button>
 
                     <div className="flex items-center gap-4 w-full sm:w-auto">
-                       <a
+                      <a
                         href={generateMailtoLink(getValues())}
                         onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).href = generateMailtoLink(getValues()); }}
                         className="flex items-center justify-center gap-3 px-6 py-5 border border-white/10 text-white/60 hover:text-rudra-400 hover:border-rudra-500/50 hover:bg-white/5 transition-all duration-300 font-inter text-[11px] tracking-widest uppercase font-bold flex-1 sm:flex-initial"
@@ -303,7 +303,7 @@ export default function Contact() {
                         <Mail size={16} />
                         Email
                       </a>
-                      
+
                       <a
                         href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Rudra%20Creations`}
                         target="_blank"

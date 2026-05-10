@@ -81,11 +81,11 @@ export default function UpcomingProjects() {
                     alt={movie.title}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 filter brightness-75 group-hover:brightness-100"
                   />
-                  
+
                   {/* Overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-cinema-black via-transparent to-transparent opacity-80" />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-rudra-500" />
-                  
+
                   {/* Genre Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="bg-black/60 backdrop-blur-md border border-rudra-500/20 text-[10px] font-inter tracking-[0.2em] uppercase px-3 py-1.5 text-rudra-300">
@@ -96,8 +96,8 @@ export default function UpcomingProjects() {
                   {/* Year Badge */}
                   <div className="absolute top-4 right-4">
                     <div className="bg-white/10 backdrop-blur-md border border-white/10 text-white text-[10px] font-inter tracking-widest px-3 py-1.5 flex items-center gap-2">
-                       <Clock size={12} className="text-rudra-400" />
-                       {movie.year}
+                      <Clock size={12} className="text-rudra-400" />
+                      {movie.year}
                     </div>
                   </div>
 
@@ -138,13 +138,13 @@ export default function UpcomingProjects() {
                         Progress
                       </span>
                       <span className="font-inter text-xs font-bold text-rudra-400">
-                        {i === 0 ? "75%" : i === 1 ? "40%" : "15%"}
+                        {i === 0 ? "10%" : i === 1 ? "30%" : "15%"}
                       </span>
                     </div>
                     <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={inView ? { width: i === 0 ? "75%" : i === 1 ? "40%" : "15%" } : {}}
+                        animate={inView ? { width: i === 0 ? "10%" : i === 1 ? "30%" : "15%" } : {}}
                         transition={{ delay: 0.8 + i * 0.2, duration: 1.5, ease: "circOut" }}
                         className="h-full"
                         style={{ background: "linear-gradient(90deg, #00D4E8, #D4AF37)" }}

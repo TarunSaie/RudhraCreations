@@ -26,7 +26,7 @@ export default function CustomCursor() {
     const onMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      if (!visible) setVisible(true);
+      setVisible(true);
     };
 
     const onLeave = () => setVisible(false);
@@ -59,7 +59,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseover", onHoverStart);
       document.body.style.cursor = "";
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   // Don't render on touch devices
   if (typeof window !== "undefined" && !window.matchMedia("(pointer: fine)").matches) {

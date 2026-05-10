@@ -62,7 +62,7 @@ export default function MapSection() {
 
             <iframe
               src={COMPANY_INFO.mapEmbedUrl}
-              title="Rudra Creations Location — Manikonda, Hyderabad"
+              title="Rudra Creations Location, Manikonda, Hyderabad"
               width="100%"
               height="420"
               style={{ border: 0 }}

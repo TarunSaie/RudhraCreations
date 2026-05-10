@@ -157,4 +157,3 @@ function LightboxModal({ image, onClose }: { image: GalleryImage | null; onClose
     </AnimatePresence>
   );
 }
-

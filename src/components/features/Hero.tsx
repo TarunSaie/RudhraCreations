@@ -63,7 +63,7 @@ export default function Hero() {
         >
           <img
             src={SLIDES[currentSlide].image}
-            alt="Rudra Creations Hero"
+            alt="Rudra Creations Telugu film production house"
             className="w-full h-full object-cover"
           />
           {/* Multi-layer cinematic overlay */}
@@ -311,7 +311,7 @@ export default function Hero() {
 
           <motion.img
             src={shivaEye}
-            alt="Rudra — The Divine Eye"
+            alt="Rudra Creations divine eye artwork"
             className="relative w-full max-w-[480px] object-contain"
             style={{
               filter:
