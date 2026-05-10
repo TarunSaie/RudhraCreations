@@ -274,9 +274,9 @@ export default function Hero() {
             className="flex gap-8 mt-10 pt-8 border-t border-white/10"
           >
             {[
-              { num: "6+", label: "Films" },
-              { num: "12+", label: "Awards" },
-              { num: "7 Yrs", label: "Legacy" },
+              { num: "1", label: "Film" },
+              { num: "1", label: "Awards" },
+              { num: "5Yrs", label: "Legacy" },
             ].map(({ num, label }) => (
               <div key={label} className="text-center">
                 <p className="font-cinzel text-xl font-bold gold-text">{num}</p>
