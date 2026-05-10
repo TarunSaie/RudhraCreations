@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Award, Film, Users, Star } from "lucide-react";
-import gautamImg from "@/assets/gautam.jpeg";
+// import gautamImg from "@/assets/gautam.jpeg";
 
 const STATS = [
-  { icon: Film, value: "1+", label: "Film Produced" },
-  { icon: Award, value: "0", label: "Awards Won" },
+  { icon: Film, value: "1", label: "Film Produced" },
+  { icon: Award, value: "1", label: "Awards Won" },
   { icon: Users, value: "100+", label: "Crew Members" },
   { icon: Star, value: "5", label: "Years of Excellence" },
 ];
@@ -66,7 +66,7 @@ export default function About() {
 
               <div className="relative z-10 overflow-hidden">
                 <img
-                  src={gautamImg}
+                  src="https://res.cloudinary.com/dhy0cx167/image/upload/v1778435501/gautam_es6id2.jpg"
                   alt="T Gowtham Leela Varma, founder of Rudra Creations"
                   className="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
