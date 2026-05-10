@@ -3,13 +3,13 @@ import type { Movie, GalleryImage, SocialLink } from "@/types";
 export const COMPANY_INFO = {
   name: "Rudra Creations",
   tagline: "Crafting Stories that Inspire",
-  founder: "T Gowtham Leela Varma",
+  founder: "T Leela Gowtham Varma",
   location: "Manikonda, Hyderabad, Telangana, India",
   whatsapp: "+91 7995177703",
   phone: "+91 7995177703",
   email: "rudracreations09@gmail.com",
   instagram: "https://www.instagram.com/varma_gowtham/",
-  youtube: "https://youtube.com/@rudracreations",
+  facebook: "https://www.facebook.com/share/1B7gHsLbeB/?mibextid=wwXIfr",
   founded: "2018",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.8!2d78.3897!3d17.4042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97e6b9c6fe8b%3A0xa9023891a3527c9f!2sManikonda%2C%20Hyderabad%2C%20Telangana%20500089!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
@@ -21,9 +21,10 @@ export const MOVIES: Movie[] = [
     title: "Kali",
     year: "2024",
     genre: "Psychological Thriller",
-    description: "Sivaram who is a loser of the choices he made in his life and decides to end his life. A mysterious man comes to the house and corner him to play the game of Othello which reveals the facts of life.",
+    description:
+      "Sivaram who is a loser of the choices he made in his life and decides to end his life. A mysterious man comes to the house and corner him to play the game of Othello which reveals the facts of life.",
     director: "Siva Sashu",
-    producer: "T Gowtham Leela Varma",
+    producer: "T Leela Gowtham Varma",
     story: "Siva Sashu",
     screenplay: "Nishanth Katari, Ramana Jagarlamudi",
     cast: "Naresh Agastya, Prince Cecil, Neha Krishna",
@@ -32,7 +33,7 @@ export const MOVIES: Movie[] = [
     youtubeId: "D6QipMemG5M",
     status: "released",
     language: "Telugu",
-  }
+  },
   // {
   //   id: 2,
   //   title: "Kaliyuga",
@@ -40,7 +41,7 @@ export const MOVIES: Movie[] = [
   //   genre: "Thriller / Mystery",
   //   description:
   //     "In a city where corruption bleeds into every corner, one honest inspector unravels a web of dark secrets that threatens to consume him. A neo-noir Telugu thriller that redefines suspense.",
-  //   director: "T Gowtham Leela Varma",
+  //   director: "T Leela Gowtham Varma",
   //   cast: "Anand Raj, Meera Nair, Siddharth",
   //   poster:
   //     "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=400&h=600&fit=crop&auto=format",
@@ -55,7 +56,7 @@ export const MOVIES: Movie[] = [
   //   genre: "Romance / Drama",
   //   description:
   //     "A soul-stirring love story set against the golden backdrop of Hyderabad. Two hearts, separated by destiny, find their way back through the language of music and sacrifice.",
-  //   director: "T Gowtham Leela Varma",
+  //   director: "T Leela Gowtham Varma",
   //   cast: "Karthik, Ananya Reddy, Naveen",
   //   poster:
   //     "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&h=600&fit=crop&auto=format",
@@ -70,7 +71,7 @@ export const MOVIES: Movie[] = [
   //   genre: "Epic / Action",
   //   description:
   //     "The flagship film of Rudra Creations. A mythological epic retold in modern times — when an ancient warrior's spirit is reborn in today's Hyderabad to battle forces that defy nature itself.",
-  //   director: "T Gowtham Leela Varma",
+  //   director: "T Leela Gowtham Varma",
   //   cast: "Mahesh Kumar, Deepika, Sameer Khan",
   //   poster:
   //     "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=600&fit=crop&auto=format",
@@ -85,7 +86,7 @@ export const MOVIES: Movie[] = [
   //   genre: "Action / Patriotism",
   //   description:
   //     "A tribute to the unsung heroes of our nation. Veera follows a decorated soldier's battle — not just on the border, but in the corridors of power where true courage is tested.",
-  //   director: "T Gowtham Leela Varma",
+  //   director: "T Leela Gowtham Varma",
   //   cast: "Arjun Reddy, Kavya Menon, Rajesh",
   //   poster:
   //     "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=400&h=600&fit=crop&auto=format",
@@ -100,7 +101,7 @@ export const MOVIES: Movie[] = [
   //   genre: "Romance / Musical",
   //   description:
   //     "A poetic journey through love and loss, told through the melodies of a struggling composer who finds inspiration in the muse he cannot have. A musical odyssey unlike any other.",
-  //   director: "T Gowtham Leela Varma",
+  //   director: "T Leela Gowtham Varma",
   //   cast: "Sai Ram, Pooja Hegde, Suresh",
   //   poster:
   //     "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=600&fit=crop&auto=format",
@@ -116,48 +117,54 @@ export const UPCOMING_MOVIES: Movie[] = [
     title: "Shakti — Rise of the Phoenix",
     year: "2025",
     genre: "Action / Mythology",
-    description: "An untold legend resurfaces. When the city of Hyderabad is threatened by a supernatural force, only the chosen one can awaken the ancient Shakti within. A mega-budget spectacle unlike anything Telugu cinema has seen.",
+    description:
+      "An untold legend resurfaces. When the city of Hyderabad is threatened by a supernatural force, only the chosen one can awaken the ancient Shakti within. A mega-budget spectacle unlike anything Telugu cinema has seen.",
     director: "Siva Sashu",
     cast: "TBA",
-    poster: "https://res.cloudinary.com/dhy0cx167/image/upload/v1778429132/WhatsApp_Image_2026-05-10_at_9.32.39_PM_moh9lk.jpg",
+    poster:
+      "https://res.cloudinary.com/dhy0cx167/image/upload/v1778429132/WhatsApp_Image_2026-05-10_at_9.32.39_PM_moh9lk.jpg",
     youtubeId: "",
     status: "upcoming",
     language: "Telugu / Tamil / Hindi",
     producer: "",
     story: "",
-    screenplay: ""
+    screenplay: "",
   },
   {
     id: 102,
     title: "Abaddam",
     year: "2025",
     genre: "Political Thriller",
-    description: "In a democracy where every vote is a battle, one ordinary man's lie becomes the most powerful weapon. A biting political thriller that will leave you questioning everything you know about power.",
-    director: "T Gowtham Leela Varma",
+    description:
+      "In a democracy where every vote is a battle, one ordinary man's lie becomes the most powerful weapon. A biting political thriller that will leave you questioning everything you know about power.",
+    director: "T Leela Gowtham Varma",
     cast: "TBA",
-    poster: "https://res.cloudinary.com/dhy0cx167/image/upload/v1778429133/WhatsApp_Image_2026-05-10_at_9.32.38_PM_ewqyx1.jpg",
+    poster:
+      "https://res.cloudinary.com/dhy0cx167/image/upload/v1778429133/WhatsApp_Image_2026-05-10_at_9.32.38_PM_ewqyx1.jpg",
     youtubeId: "",
     status: "upcoming",
     language: "Telugu",
     producer: "",
     story: "",
-    screenplay: ""
+    screenplay: "",
   },
   {
     id: 103,
     title: "Kala Ratri",
     year: "2026",
     genre: "Horror / Supernatural",
-    description: "Some doors were never meant to be opened. Kala Ratri ventures into the darkest corners of Telugu folklore to deliver a supernatural horror experience that will haunt you long after the credits roll.",
-    director: "T Gowtham Leela Varma",
+    description:
+      "Some doors were never meant to be opened. Kala Ratri ventures into the darkest corners of Telugu folklore to deliver a supernatural horror experience that will haunt you long after the credits roll.",
+    director: "T Leela Gowtham Varma",
     cast: "TBA",
-    poster: "https://res.cloudinary.com/dhy0cx167/image/upload/v1778429417/ChatGPT_Image_May_10_2026_09_39_54_PM_actky7.png",
+    poster:
+      "https://res.cloudinary.com/dhy0cx167/image/upload/v1778429417/ChatGPT_Image_May_10_2026_09_39_54_PM_actky7.png",
     youtubeId: "",
     status: "upcoming",
     language: "Telugu",
     producer: "",
     story: "",
-    screenplay: ""
+    screenplay: "",
   },
 ];
 
