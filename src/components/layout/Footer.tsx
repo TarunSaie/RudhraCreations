@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, Youtube, Heart, ChevronUp } from "lucide-react";
+import { Instagram, Facebook, Heart, ChevronUp } from "lucide-react";
 import { COMPANY_INFO } from "@/constants/data";
 import logo from "@/assets/logo.png";
 
@@ -58,7 +58,7 @@ export default function Footer() {
             </p>
             <p className="font-inter text-cinema-text-muted text-xs leading-relaxed">
               A premier Telugu film production house based in Nanakramguda, Hyderabad. Founded by
-              T Gowtham Leela Varma with a vision to elevate Telugu cinema on the world stage.
+              T Leela Gowtham Varma with a vision to elevate Telugu cinema on the world stage.
             </p>
           </div>
 
@@ -95,15 +95,15 @@ export default function Footer() {
               >
                 <Instagram size={18} />
               </a>
-              <a
-                href={COMPANY_INFO.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 border border-cinema-gray-mid hover:border-crimson-500 flex items-center justify-center text-cinema-text-muted hover:text-crimson-400 transition-all duration-300 hover:bg-crimson-600/5"
-                aria-label="YouTube"
-              >
-                <Youtube size={18} />
-              </a>
+           <a
+  href={COMPANY_INFO.facebook}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-11 h-11 border border-blue-600/40 hover:border-blue-500 flex items-center justify-center text-blue-400 hover:text-white transition-all duration-300 hover:bg-blue-600"
+  aria-label="Facebook"
+>
+  <Facebook size={18} />
+</a>
             </div>
             <div className="space-y-2">
               <p className="font-inter text-[10px] text-cinema-text-muted tracking-widest uppercase">
@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-inter text-cinema-text-muted text-xs tracking-wide text-center sm:text-left">
             © {new Date().getFullYear()} Rudra Creations. All Rights Reserved. Founded by{" "}
-            <span className="text-gold-500">T Gowtham Leela Varma</span>.
+            <span className="text-gold-500">T Leela Gowtham Varma</span>.
           </p>
 
           <div className="flex items-center gap-1 font-inter text-cinema-text-muted text-xs">

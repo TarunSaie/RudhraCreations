@@ -236,7 +236,7 @@ export default function Contact() {
                       <label className="font-inter text-[11px] tracking-[0.2em] text-white/60 uppercase font-bold block mb-3">
                         Full Name <span className="text-rudra-500">*</span>
                       </label>
-                      <input {...register("fullName")} placeholder="T Gowtham Leela Varma" className={inputClass} />
+                      <input {...register("fullName")} placeholder="T Leela Gowtham Varma" className={inputClass} />
                       {errors.fullName && (
                         <p className="font-inter text-red-500 text-[11px] mt-2 font-medium tracking-wide uppercase">{errors.fullName.message}</p>
                       )}
