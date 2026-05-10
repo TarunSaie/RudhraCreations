@@ -23,17 +23,17 @@ export default function Navbar() {
       setScrolled(window.scrollY > 60);
       const sections = NAV_LINKS.map((link) => link.href.substring(1));
       let foundSection = "";
-      
+
       // Find the section closest to the top of the viewport
       let closestDistance = Infinity;
-      
+
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const el = document.getElementById(section);
         if (el) {
           const rect = el.getBoundingClientRect();
           const offsetTop = rect.top + window.scrollY - 120;
-          
+
           // Check if section is in view (within viewport)
           if (rect.top <= 150 && rect.bottom > 150) {
             const distance = Math.abs(rect.top - 120);
@@ -44,7 +44,7 @@ export default function Navbar() {
           }
         }
       }
-      
+
       // Only update if we found a visible section
       if (foundSection) {
         setActiveSection(foundSection);
@@ -94,12 +94,11 @@ export default function Navbar() {
                 } drop-shadow-[0_0_8px_rgba(0,212,232,0.3)]`}
             /> */}
             <img
-  src={logo}
-  alt="Rudra Creations Logo"
-  className={`object-contain block shrink-0 transition-all duration-500 ${
-    scrolled ? "h-10 w-10 md:h-12 md:w-12" : "h-14 w-14 md:h-16 md:w-16"
-  } drop-shadow-[0_0_8px_rgba(0,212,232,0.3)]`}
-/>
+              src={logo}
+              alt="Rudra Creations Logo"
+              className={`object-contain block shrink-0 transition-all duration-500 ${scrolled ? "h-10 w-10 md:h-12 md:w-12" : "h-14 w-14 md:h-16 md:w-16"
+                } drop-shadow-[0_0_8px_rgba(0,212,232,0.3)]`}
+            />
             <div className="hidden sm:block text-left sm:hidden lg:block">
               <span className="font-cinzel font-bold text-white text-[15px] tracking-widest block leading-none">
                 RUDRA
@@ -233,4 +232,3 @@ export default function Navbar() {
     </>
   );
 }
-

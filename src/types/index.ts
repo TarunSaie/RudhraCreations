@@ -5,6 +5,9 @@ export interface Movie {
   genre: string;
   description: string;
   director: string;
+  producer: string;
+  story: string;
+  screenplay: string;
   cast: string;
   poster: string;
   youtubeId: string;
