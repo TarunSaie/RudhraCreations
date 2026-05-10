@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Award, Film, Users, Star } from "lucide-react";
-import gautamImg from "@/assets/gautam.jpeg";
+import gautamImg from "@/assets/founder.jpg";
 
 const STATS = [
   { icon: Film, value: "1+", label: "Film Produced" },
